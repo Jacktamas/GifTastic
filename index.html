@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>GIF-TASTIC</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/cssshake.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
-
 <body>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Gif-Tastic</h1>
-        <!-- Rendered Buttons will get Dumped Here  -->
-        <div class="row">
-          <div class="col-md-8">
-            <div id="buttons-view"></div>
-          </div>
-
-          <div class="col-md-4">
-            <form id="gif-form">
-              <div class="row">
-                <div class="col-md-6">
-                  <label for="gif-input"></label>
-                  <input type="text" id="gif-input" placeholder="Add Animal..."><br>
-                </div>
-
-                <!-- Button triggers new gif to be added -->
-                <div class="col-md-6">
-                  <input id="add-gif" type="submit" value="Add an animal">
-                </div>
-              </div>
-            </form>
-          </div>
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="shake-slow shake-constant">Gif-Tastic</h1>
+      <!-- Rendered Buttons will get Dumped Here  -->
+      <div class="row">
+        <div class="col-md-8">
+          <div id="buttons-view"></div>
         </div>
-
-        <!-- gif will Get Dumped Dere -->
-
-        <div id="gifs-view" class="col-md-9"></div>
+        <div class="col-md-4">
+          <form id="gif-form">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="gif-input"><input name="addAnimal" class="btn" type="text" id="gif-input" placeholder="Add Animal ..." required></label>
+              </div>
+              <!--    Button triggers new gif to be added -->
+              <div class="col-md-6">
+                <label for="gif-input"><input class="btn btn-primary" id="add-gif" type="submit" value="Add an animal"></label>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+    <div id="gifs-view" class="col-md-12">
+      <!-- gif will Get Dumped Dere -->
+    </div>
   </div>
+</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/app.js" charset="utf-8"></script>
 </body>
-
 </html>
