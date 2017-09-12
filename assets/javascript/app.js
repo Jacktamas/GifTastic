@@ -1,5 +1,5 @@
 // Initial array of gifs
-var animals = ["cow", "rabit", "monkey", "zebra", "lion", "sheep", "hourse", "pig", "jaguar"];
+var animals = ["cow", "rabbit", "monkey", "lion", "sheep", "horse", "pig", "cat", "bear","donkey","camel"];
 
 $('#buttons-view').on('click', '.gifBtn', function(){
   var gif = $(this).attr("data-name");
@@ -54,7 +54,7 @@ function renderButtons() {
     // Then dynamicaly generating buttons for each gif in the array
     var btn = $("<button>");
     // Adding btn class of gif to our button
-    btn.addClass("btn-primary btn gifBtn");
+    btn.addClass("gifBtn btn-primary btn");
     // Adding btn data-attribute
     btn.attr("data-name", animals[i]);
     // Providing the initial button text
