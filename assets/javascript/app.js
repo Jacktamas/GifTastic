@@ -1,5 +1,5 @@
 // Initial array of gifs
-var animals = ["cow", "rabbit", "monkey", "lion", "sheep", "horse", "pig", "cat", "bear","donkey","camel"];
+var animals = ["Cow", "Rabbit", "Monkey", "Lion", "Sheep", "Horse", "Pig", "Cat", "Bear","Donkey","Camel", "Wolf"];
 
 $('#buttons-view').on('click', '.gifBtn', function(){
   var gif = $(this).attr("data-name");
@@ -43,7 +43,10 @@ $('#gifs-view').on('click', 'img', function(){
 });
 
 // Function for displaying animals data buttons
-function renderButtons() {
+/**
+ * @return {[type]}
+ */
+ function renderButtons() {
   // Deleting the gifs prior to adding new gifs
   // (this is necessary otherwise you will have repeat buttons)
   $("#buttons-view").empty();
@@ -63,6 +66,7 @@ function renderButtons() {
     $("#buttons-view").append(btn);
   }
 }
+renderButtons();
 // This function handles events where a gif button is clicked
 $("#add-gif").on("click", function(event) {
   event.preventDefault();
@@ -82,4 +86,3 @@ $("#add-gif").on("click", function(event) {
   renderButtons();
 });
 // Calling the renderButtons function to display the intial buttons
-renderButtons();

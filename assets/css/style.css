@@ -19,7 +19,6 @@ body {
 
 button.btn {
   margin: 0px 10px;
-  padding: 10px;
   margin-bottom: 10px;
 }
 img {
@@ -27,7 +26,7 @@ img {
   border: 1px solid black;
   box-shadow: 2px 2px 5px black;
   width: 300px;
-  height: 200px;
+  height: 200px !important;
 }
 input {
   padding: 10px;
