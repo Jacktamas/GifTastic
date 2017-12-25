@@ -1,16 +1,30 @@
+//To check when animations are done then do something
+$.fn.extend({
+    animateCss: function (animationName, callback) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+            if (callback) {
+              callback();
+            }
+        });
+        return this;
+    }
+});
+
+
 // Initial array of gifs
-var animals = ["Cow", "Rabbit", "Monkey", "Lion", "Sheep", "Horse", "Pig", "Cat", "Bear","Donkey","Camel", "Wolf"];
+var querys = ["Cow", "Rabbit", "Spongebob", "Mr.Bean", "Science", "Coffee", "Race", "Prank", "Car","Farmer","Burger", "Football"];
 
 $('#buttons-view').on('click', '.gifBtn', function(){
   var gif = $(this).attr("data-name");
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=661a0289776d482eb0c501d5a2c52323&q="+gif+"&limit=12&offset=0&rating=G&lang=en";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=661a0289776d482eb0c501d5a2c52323&q="+gif+"&limit=15&offset=0&rating=G&lang=en";
   $.ajax({
     url: queryURL,
     method: "GET"
   }).done(function(response) {
-    console.log(response)
     $("#gifs-view").empty();
-    for(var i=0; i < 12; i++ ){
+    for(var i=0; i < 15; i++ ){
       var gifURL = response.data[i].images.original.url;
       var gifURLStill = response.data[i].images.original_still.url;
       // Creating a div to hold the gif img
@@ -42,7 +56,7 @@ $('#gifs-view').on('click', 'img', function(){
   }
 });
 
-// Function for displaying animals data buttons
+// Function for displaying querys data buttons
 /**
  * @return {[type]}
  */
@@ -52,16 +66,16 @@ $('#gifs-view').on('click', 'img', function(){
   $("#buttons-view").empty();
 
   // Looping through the array of gifs
-  for (var i = 0; i < animals.length; i++) {
+  for (var i = 0; i < querys.length; i++) {
 
     // Then dynamicaly generating buttons for each gif in the array
     var btn = $("<button>");
     // Adding btn class of gif to our button
     btn.addClass("gifBtn btn-primary btn");
     // Adding btn data-attribute
-    btn.attr("data-name", animals[i]);
+    btn.attr("data-name", querys[i]);
     // Providing the initial button text
-    btn.text(animals[i]);
+    btn.text(querys[i]);
     // Adding the button to the buttons-view div
     $("#buttons-view").append(btn);
   }
@@ -69,17 +83,15 @@ $('#gifs-view').on('click', 'img', function(){
 renderButtons();
 // This function handles events where a gif button is clicked
 $("#add-gif").on("click", function(event) {
-  event.preventDefault();
+  // event.preventDefault();
   // This line grabs the input from the textbox
   // 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
   var gif = $("#gif-input").val().trim();
-  if(gif === ""){
-    $('input[name=addAnimal]').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass('animated shake');
-    })
+  if(!gif){
+    $('input[name=addAnimal').animateCss('bounce');
   }
   else {
-    animals.push(gif);
+    querys.push(gif);
   }
   // Adding gif from the textbox to our array
   // Calling renderButtons which handles the processing of our gif array

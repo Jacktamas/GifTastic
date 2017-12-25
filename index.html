@@ -13,42 +13,46 @@
   <link rel="shortcut icon" href="assets/images/gif-icon.png" type="image/x-icon" />
 </head>
 <body>
- <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="shake-slow shake-constant">Gif-Tastic</h1>
-      <!-- Rendered Buttons will get Dumped Here  -->
-      <div class="row">
-        <div class="col-md-8">
-          <div id="buttons-view"></div>
-        </div>
-        <div class="col-md-4">
-          <form id="gif-form">
-            <div class="row">
-              <div class="col-md-6">
-                <label for="gif-input"><input name="addAnimal" class="btn" type="text" id="gif-input" placeholder="Add Animal ..." required></label>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="shake-slow shake-constant">Gif-Tastic</h1>
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div class="row">
+          <div class="col-md-8">
+            <div id="buttons-view"></div>
+            <hr>
+          </div>
+          <div class="col-md-4">
+            <form id="gif-form">
+              <div class="row text-center">
+                <div class="col-xs-8 col-md-8">
+                  <label for="gif-input"><input name="addAnimal" class="btn" type="text" id="gif-input" placeholder="Your search query ..."></label>
+                </div>
+                <!--    Button triggers new gif to be added -->
+                <div class="col-xs-4 col-md-4">
+                  <label for="gif-input"><button class="btn btn-success" id="add-gif" type="button">Search</button></label>
+                </div>
               </div>
-              <!--    Button triggers new gif to be added -->
-              <div class="col-md-6">
-                <label for="gif-input"><input class="btn btn-primary" id="add-gif" type="submit" value="Add an animal"></label>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    <div id="gifs-view" class="col-md-12">
-      <h1>
-        <span
-        class="txt-rotate"
-        data-period="2000"
-        data-rotate='[ "Click on the Animals Buttons or add animal button to display GIPHY images. Have Fun!" ]'></span>
-      </h1>
-      <audio src="assets/audio/typing.mp3" autoplay loop></audio>
-      <!-- gif will Get Dumped Dere -->
+    <div class="row">
+
+      <div id="gifs-view" class="col-md-12">
+        <h1>
+          <span
+          class="txt-rotate"
+          data-period="2000"
+          data-rotate='[ "Click on the Animals Buttons or add animal button to display GIPHY images. Have Fun!" ]'></span>
+        </h1>
+        <audio src="assets/audio/typing.mp3" autoplay loop></audio>
+        <!-- gif will Get Dumped Dere -->
+      </div>
     </div>
   </div>
-</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/app.js" charset="utf-8"></script>
